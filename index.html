@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arka Container Defect Detection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+            <h1>Arka Container Defect Detection</h1>
+        </div>
+        <div id="auth-buttons">
+            <button id="login-button" class="btn auth-btn">Login</button>
+            <div id="user-info" class="user-info hidden">
+                <span>Logged in as: <span id="logged-user"></span></span>
+                <button id="logout-btn" class="btn auth-btn">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="login-section">
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Account:</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn login-btn">Login</button>
+                <p id="login-error" class="error-text hidden"></p>
+            </form>
+        </div>
+        
+        <div id="main-content" class="hidden">
+            <div class="upload-section">
+                <div class="upload-area" id="upload-area">
+                    <div id="drop-message">
+                        <p>Drag & drop an image here</p>
+                        <p>- or -</p>
+                        <label for="file-input" class="upload-btn">Select Image</label>
+                        <input type="file" id="file-input" accept="image/*" hidden>
+                    </div>
+                    <div id="preview-container" class="hidden">
+                        <img id="image-preview" src="#" alt="Preview">
+                        <div class="preview-actions">
+                            <button id="change-image-btn">Change Image</button>
+                            <button id="process-btn" class="process-btn">Process Image</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Processing image...</p>
+            </div>
+            
+            <div id="error-section" class="hidden">
+                <h2>Error</h2>
+                <p id="error-message"></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
